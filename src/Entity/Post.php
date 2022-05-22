@@ -68,6 +68,11 @@ class Post
      */
     private $showInSlider;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $view;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -177,6 +182,18 @@ class Post
     public function setShowInSlider(bool $showInSlider): self
     {
         $this->showInSlider = $showInSlider;
+
+        return $this;
+    }
+
+    public function getView(): ?int
+    {
+        return $this->view;
+    }
+
+    public function setView(?int $view): self
+    {
+        $this->view = $view;
 
         return $this;
     }

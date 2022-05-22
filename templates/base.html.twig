@@ -5,54 +5,34 @@
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<title>God Spirit</title>
 		<meta name="description" content="enseignements bibliques">
-		<meta
-		name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- Favicon -->
-		<link
-		rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
-		<!-- Normalize CSS -->
-		<link
-		rel="stylesheet" href="css/normalize.css">
-		<!-- Main CSS -->
-		<link
-		rel="stylesheet" href="css/main.css">
-		<!-- Bootstrap CSS -->
-		<link
-		rel="stylesheet" href="css/bootstrap.min.css">
-		<!-- Font Awesome CSS -->
-		<link
-		rel="stylesheet" href="css/fontawesome-all.min.css">
-		<!-- Flat Icon CSS -->
-		<link
-		rel="stylesheet" href="font/flaticon.css">
-		<!-- Animate CSS -->
-		<link
-		rel="stylesheet" href="css/animate.min.css">
-		<!-- Owl Carousel CSS -->
-		<link rel="stylesheet" href="vendor/OwlCarousel/owl.carousel.min.css">
-		<link
-		rel="stylesheet" href="vendor/OwlCarousel/owl.theme.default.min.css">
-		<!-- Custom CSS -->
-		<link
-		rel="stylesheet" href="style.css">
-		<!-- Modernize js -->
-		<script src="js/modernizr-3.6.0.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+		<link rel="stylesheet" href="{{asset('css/normalize.css')}}">
+		<link rel="stylesheet" href="{{asset('css/main.css')}}">
+		<link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+		<link rel="stylesheet" href="{{asset('css/fontawesome-all.min.css')}}">
+		<link rel="stylesheet" href="{{asset('font/flaticon.css')}}">
+		<link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
+		<link rel="stylesheet" href="{{asset('vendor/OwlCarousel/owl.carousel.min.css')}}">
+		<link rel="stylesheet" href="{{asset('vendor/OwlCarousel/owl.theme.default.min.css')}}">
+		<link rel="stylesheet" href="{{asset('style.css')}}">
+		<script src="{{asset('js/modernizr-3.6.0.min.js')}}"></script>
 	</head>
 
 	<body class="sticky-header">
-		<div id="preloader"> </div>
 		<!-- Preloader End Here -->
 		<div id="wrapper" class="wrapper padding-x-85">
 			<!-- Add your site or application content here -->
 			<!-- Header Area Start Here -->
-				<header><div id="rt-sticky-placeholder"> </div>
+			<header>
+				<div id="rt-sticky-placeholder"> </div>
 				<div id="header-menu" class="header-menu menu-layout3 pt--29 pb--29 bg--light">
 					<div class="container-fluid">
 						<div class="row no-gutters d-flex align-items-center">
 							<div class="col-xl-4 col-lg-4 col-6 d-flex justify-content-start">
 								<div class="logo-area">
-									<a href="index.html" class="temp-logo" id="temp-logo">
-										<h1>God Spirit</h1>
+									<a href="{{path('app_home')}}" class="temp-logo" id="temp-logo">
+										<h1 class="text-danger">God Spirit</h1>
 									</a>
 								</div>
 							</div>
@@ -61,37 +41,27 @@
 									<ul>
 										<li class="item-social-layout2">
 											<a href="#">
-												<i class="fab fa-facebook-f"></i>
+												Home
 											</a>
 										</li>
 										<li class="item-social-layout2">
 											<a href="#">
-												<i class="fab fa-twitter"></i>
+												Categories
 											</a>
 										</li>
 										<li class="item-social-layout2">
 											<a href="#">
-												<i class="fab fa-instagram"></i>
+												About
 											</a>
 										</li>
 										<li class="item-social-layout2">
 											<a href="#">
-												<i class="fab fa-youtube"></i>
+												Contact
 											</a>
 										</li>
 										<li class="item-social-layout2">
 											<a href="#">
-												<i class="fas fa-rss"></i>
-											</a>
-										</li>
-										<li class="item-social-layout2">
-											<a href="#">
-												<i class="fab fa-linkedin-in"></i>
-											</a>
-										</li>
-										<li class="item-social-layout2">
-											<a href="#">
-												<i class="fab fa-google-plus-g"></i>
+												Connexion
 											</a>
 										</li>
 									</ul>
@@ -123,36 +93,9 @@
 			</header>
 			{% block body %}{% endblock %}
 			<section class="instagram-feed-wrap-1">
-				<div class="instagram-feed-title-1">
-					<a href="#">
-						<i class="fab fa-instagram"></i>FOLLOW US ON INSTAGRAM</a>
+				<div class="instagram-feed-title-1 col-lg-12" style="background-color:grey;height:50px;padding:7px;margin-top:30px">
+					<input type="email" placeholder="Entrez votre email pour souscrire à la newsletter" class="col-lg-8" name="email-newsletter"/>
 				</div>
-				<ul class="instagram-feed-figure-1">
-					<li>
-						<a href="#"><img src="img/social-figure/social-figure22.jpg" alt="Social"></a>
-					</li>
-					<li>
-						<a href="#"><img src="img/social-figure/social-figure23.jpg" alt="Social"></a>
-					</li>
-					<li>
-						<a href="#"><img src="img/social-figure/social-figure24.jpg" alt="Social"></a>
-					</li>
-					<li>
-						<a href="#"><img src="img/social-figure/social-figure25.jpg" alt="Social"></a>
-					</li>
-					<li>
-						<a href="#"><img src="img/social-figure/social-figure26.jpg" alt="Social"></a>
-					</li>
-					<li>
-						<a href="#"><img src="img/social-figure/social-figure27.jpg" alt="Social"></a>
-					</li>
-					<li>
-						<a href="#"><img src="img/social-figure/social-figure28.jpg" alt="Social"></a>
-					</li>
-					<li>
-						<a href="#"><img src="img/social-figure/social-figure29.jpg" alt="Social"></a>
-					</li>
-				</ul>
 			</section>
 			<!-- Instagram End Here -->
 			<!-- Footer Area Start Here -->
@@ -160,29 +103,13 @@
 				<div class="container">
 					<div class="footer-box-layout3">
 						<div class="footer-logo">
-							<a href="index.html">
-								<h1>God Spirit</h1>
+							<a href="{{path('app_home')}}">
+								<h1 class="text-danger">God Spirit</h1>
 							</a>
 						</div>
-						<ul class="footer-social">
-							<li>
-								<a href="#">
-									<i class="fab fa-facebook-f"></i>259k LIKES</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fab fa-twitter"></i>480k FOLLOWERS</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fab fa-instagram"></i>280k FOLLOWERS</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fab fa-youtube"></i>180k SUBSCRIBER</a>
-							</li>
-						</ul>
-						<div class="copyright">© 2019 blogxer. All Rights Reserved.</div>
+						<div class="copyright">
+							© {{ 'now' | date('Y') }} God Spirit. All Rights Reserved.
+						</div>
 					</div>
 				</div>
 			</footer>
@@ -202,8 +129,8 @@
 			<div class="offcanvas-menu-wrap" id="offcanvas-wrap" data-position="right">
 				<div class="offcanvas-content">
 					<div class="offcanvas-logo">
-						<a href="index.html">
-							<h1>God Spirit</h1>
+						<a href="{{path('app_home')}}">
+							<h1 class="text-danger">God Spirit</h1>
 						</a>
 					</div>
 					<ul class="offcanvas-menu">
