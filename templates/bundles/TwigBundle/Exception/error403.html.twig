@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Erreur 403
+{% endblock %}
+
+{% block body %}
+    <section class="error-page-wrap">
+        <div class="container">
+            <div class="error-page-box">
+                <div class="error-logo">
+                   <h2>
+                        Erreur {{status_code}}
+                    </h2>
+                </div>
+                <h2 class="error-title">
+                    Oops! Une erreur est survenue!
+                </h2>
+                <p>
+                    {{status_text}}
+                </p>
+                <a href="{{path('app_home')}}" class="item-btn">
+                    Retour à l'accueil
+                </a>
+            </div>
+        </div>
+    </section>
+{% endblock %}
