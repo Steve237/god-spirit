@@ -15,31 +15,29 @@ class CategoriesCrudController extends AbstractCrudController
         return Categories::class;
     }
 
-    
+
     public function configureFields(string $pageName): iterable
     {
         yield TextField::new('name')
             ->setLabel("Nom");
-        
+
         if (Crud::PAGE_NEW === $pageName) {
 
             yield ImageField::new('categoryPicture')
-            ->setLabel("Image de couverture")
-            ->hideOnIndex()
-            ->setBasePath('img/uploads')
-            ->setUploadDir('public/img/uploads')
-            ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]');
-
+                ->setLabel("Image de couverture")
+                ->hideOnIndex()
+                ->setBasePath('img/uploads')
+                ->setUploadDir('public/img/uploads')
+                ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]');
         } else {
 
             yield ImageField::new('categoryPicture')
-            ->setLabel("Image de couverture")
-            ->hideOnIndex()
-            ->setBasePath('img/uploads')
-            ->setUploadDir('public/img/uploads')
-            ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]')
-            ->setRequired(false);
+                ->setLabel("Image de couverture")
+                ->hideOnIndex()
+                ->setBasePath('img/uploads')
+                ->setUploadDir('public/img/uploads')
+                ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]')
+                ->setRequired(false);
         }
-}
-    
+    }
 }
