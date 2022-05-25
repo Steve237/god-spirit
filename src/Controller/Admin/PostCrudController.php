@@ -22,16 +22,17 @@ class PostCrudController extends AbstractCrudController
         return Post::class;
     }
 
-    public function createEntity(string $entityFqcn) {
+    public function createEntity(string $entityFqcn)
+    {
         $entity = new Post();
         $entity->setUser($this->getUser());
         return $entity;
     }
 
     public function configureCrud(Crud $crud): Crud
-    {   
+    {
         return $crud
-        ->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig');
+            ->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig');
     }
 
     public function configureActions(Actions $actions): Actions
@@ -40,7 +41,7 @@ class PostCrudController extends AbstractCrudController
         $showPost = Action::new('Voir', 'Voir')
             ->linkToRoute('show_post', function (Post $post): array {
                 return [
-                    'id' => $post->getId()
+                    'slug' => $post->getSlug()
                 ];
             });
 
@@ -51,7 +52,7 @@ class PostCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-       yield TextField::new('title')
+        yield TextField::new('title')
             ->setLabel("Titre");
         yield TextEditorField::new('content')
             ->setLabel("Contenu")
@@ -59,12 +60,25 @@ class PostCrudController extends AbstractCrudController
             ->setFormType(CKEditorType::class);
         yield AssociationField::new('category')
             ->setLabel("Catégories");
-        yield ImageField::new('coverPicture')
-            ->setLabel("Image de couverture")
-            ->hideOnIndex()
-            ->setBasePath('img/uploads')
-            ->setUploadDir('public/img/uploads')
-            ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]');
+
+        if (Crud::PAGE_NEW === $pageName) {
+            yield ImageField::new('coverPicture')
+                ->setLabel("Image de couverture")
+                ->hideOnIndex()
+                ->setBasePath('img/uploads')
+                ->setUploadDir('public/img/uploads')
+                ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]');
+        } else {
+
+            yield ImageField::new('coverPicture')
+                ->setLabel("Image de couverture")
+                ->hideOnIndex()
+                ->setBasePath('img/uploads')
+                ->setUploadDir('public/img/uploads')
+                ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]')
+                ->setRequired(false);
+        }
+
         yield BooleanField::new('showInSlider')
             ->setLabel("Carroussel")
             ->addCssClass('bottom-space');
@@ -78,5 +92,4 @@ class PostCrudController extends AbstractCrudController
             ->setLabel("Auteur")
             ->hideOnForm();
     }
-    
 }

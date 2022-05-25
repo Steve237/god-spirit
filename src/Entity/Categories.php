@@ -29,6 +29,11 @@ class Categories
      */
     private $posts;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $categoryPicture;
+
     public function __construct()
     {
         $this->posts = new ArrayCollection();
@@ -84,5 +89,17 @@ class Categories
     public function __toString(): string
     {
         return $this->name;
+    }
+
+    public function getCategoryPicture(): ?string
+    {
+        return $this->categoryPicture;
+    }
+
+    public function setCategoryPicture(string $categoryPicture): self
+    {
+        $this->categoryPicture = $categoryPicture;
+
+        return $this;
     }
 }

@@ -17,6 +17,9 @@
 		<link rel="stylesheet" href="{{asset('vendor/OwlCarousel/owl.theme.default.min.css')}}">
 		<link rel="stylesheet" href="{{asset('style.css')}}">
 		<script src="{{asset('js/modernizr-3.6.0.min.js')}}"></script>
+		<script type="text/javascript" 
+		src="https://platform-api.sharethis.com/js/sharethis.js#property=628bcfa933846e0019f2c0e3&product=inline-share-buttons" 
+		async="async"></script>
 	</head>
 
 	<body class="sticky-header">
@@ -40,28 +43,23 @@
 								<div class="header-action-items d-flex justify-content-center">
 									<ul>
 										<li class="item-social-layout2">
-											<a href="#">
+											<a href="{{path('app_home')}}">
 												Home
 											</a>
 										</li>
 										<li class="item-social-layout2">
-											<a href="#">
+											<a href="{{path('posts')}}">
+												Articles
+											</a>
+										</li>
+										<li class="item-social-layout2">
+											<a href="{{path('app_category')}}">
 												Categories
 											</a>
 										</li>
 										<li class="item-social-layout2">
-											<a href="#">
+											<a href="{{path('app_about')}}">
 												About
-											</a>
-										</li>
-										<li class="item-social-layout2">
-											<a href="#">
-												Contact
-											</a>
-										</li>
-										<li class="item-social-layout2">
-											<a href="#">
-												Connexion
 											</a>
 										</li>
 									</ul>
@@ -92,11 +90,6 @@
 				</div>
 			</header>
 			{% block body %}{% endblock %}
-			<section class="instagram-feed-wrap-1">
-				<div class="instagram-feed-title-1 col-lg-12" style="background-color:grey;height:50px;padding:7px;margin-top:30px">
-					<input type="email" placeholder="Entrez votre email pour souscrire à la newsletter" class="col-lg-8" name="email-newsletter"/>
-				</div>
-			</section>
 			<!-- Instagram End Here -->
 			<!-- Footer Area Start Here -->
 			<footer class="footer-wrap-layout3">
@@ -133,55 +126,33 @@
 							<h1 class="text-danger">God Spirit</h1>
 						</a>
 					</div>
-					<ul class="offcanvas-menu">
+					<ul class="offcanvas-menu" style="margin-bottom:300px">
 						<li class="nav-item">
-							<a href="index.html">HOME</a>
+							<a href="{{path('app_home')}}">
+								Home
+							</a>
 						</li>
 						<li class="nav-item">
-							<a href="about.html">ABOUT</a>
+							<a href="{{path('posts')}}">
+								Articles
+							</a>
 						</li>
 						<li class="nav-item">
-							<a href="blog-category1.html">CATEGORIES</a>
+							<a href="{{path('app_category')}}">
+								Categories
+							</a>
 						</li>
 						<li class="nav-item">
-							<a href="contact.html">CONTACT</a>
+							<a href="{{path('app_about')}}">
+								About
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="{{path('app_login')}}">
+								Admin
+							</a>
 						</li>
 					</ul>
-					<div class="offcanvas-footer">
-						<div class="item-title">Follow Me</div>
-						<ul class="offcanvas-social">
-							<li>
-								<a href="#">
-									<i class="fab fa-facebook-f"></i>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fab fa-twitter"></i>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fab fa-linkedin-in"></i>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fab fa-google-plus-g"></i>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fab fa-pinterest"></i>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fas fa-rss"></i>
-								</a>
-							</li>
-						</ul>
-					</div>
 				</div>
 			</div>
 			<!-- Offcanvas Menu End -->

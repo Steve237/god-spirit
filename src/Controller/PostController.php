@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Post;
+use App\Entity\Categories;
 use Doctrine\ORM\EntityManager;
 use App\Repository\PostRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -12,6 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class PostController extends AbstractController
 {
+    
     /**
      * @Route("/article/{slug}", name="show_post")
      */
@@ -20,13 +22,11 @@ class PostController extends AbstractController
         PostRepository $postRepository, 
         EntityManagerInterface $entityManager): Response
     {
-        
-        $numberViews = $post->getView();
-        
-        if(!$numberViews) {
+    
+        if($post->getView() === null) {
             $views = 1;
        } else {
-            $views = $numberViews++;
+            $views = $post->getView() + 1;
         }
 
         $post->setView($views);
@@ -38,6 +38,34 @@ class PostController extends AbstractController
         return $this->render('post/show.html.twig', [
            "post" => $post,
            "suggestions" => $suggestions
+        ]);
+    }
+
+
+    /**
+     * @Route("/articles/{category}", name="posts_by_category")
+     */
+    public function showPostByCategory(
+        Categories $category, 
+        PostRepository $postRepository): Response
+    {
+       $posts = $postRepository->findByCategory($category);
+        
+        return $this->render('post/list.html.twig', [
+           "posts" => $posts
+        ]);
+    }
+
+
+    /**
+     * @Route("/articles", name="posts")
+     */
+    public function postsList(
+        PostRepository $postRepository): Response
+    {
+       $posts = $postRepository->findAll();
+        return $this->render('post/list.html.twig', [
+           "posts" => $posts
         ]);
     }
 }

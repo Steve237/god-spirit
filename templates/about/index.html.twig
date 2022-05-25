@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	A propos
+{% endblock %}
+
+{% block body %}
+	<section class="inner-page-banner bg-common"> 
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="breadcrumbs-area">
+						<h1>A propos</h1>
+						<ul>
+							<li>
+								<a href="{{path('app_home')}}">
+									Home
+								</a>
+							</li>
+							<li>A propos</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="about-wrap-layout1">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="about-box-layout2">
+						<h2 class="item-title">
+							{{about.0.title}}
+						</h2>
+						<div style="text-align:left">
+                            {{about.0.content | raw }}
+                        </div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="about-box-layout3">
+						<img src="{{asset('img/uploads/' ~ about.0.picture) | imagine_filter('aboutImage')}}" alt="post-image">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

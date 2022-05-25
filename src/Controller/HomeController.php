@@ -15,7 +15,7 @@ class HomeController extends AbstractController
     public function index(PostRepository $postRepository): Response
     {
         
-        $posts =  $postRepository->findAll();
+        $posts =  $postRepository->findBy(array(), array('createdAt' => 'DESC'));
         
         return $this->render('home/index.html.twig', [
             "posts" => $posts

@@ -54,8 +54,9 @@
 	
 	<section class="blog-wrap-layout18">
 		<div class="container-fluid">
+			<h2 class="text-center">Articles récents</h2>
 			<div class="row gutters-40" id="no-equal-gallery">
-				{% for post in posts %}
+				{% for post in posts | slice(0, 12) %}
 					<div class="col-xl-3 col-lg-4 col-md-6 col-12 no-equal-item">
 						<div class="blog-box-layout15">
 							<div class="item-img">
@@ -84,7 +85,34 @@
 				{% endfor %}
 			</div>
 			<div class="loadmore-btn-layout2">
-				<a href="#" class="item-btn">LOAD MORE</a>
+				<a href="#" class="item-btn">Voir tout</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="newsletter-wrap-layout1">
+		<div class="container">
+			<div class="row d-flex justify-content-center">
+				<div class="col-lg-7">
+					<div class="newsletter-box-layout1">
+						<h3 class="item-title">
+							Souscrire à notre newsletter.
+						</h3>
+						<div class="item-subtitle">
+							Recevez nos derniers articles et mise à jour par mail.
+						</div>
+						<form class="newsletter-subscribe-form">
+							<div class="row gutters-10 d-flex align-items-center">
+								<div class="col-lg-9 form-group">
+									<input type="email" placeholder="Enter your e-mail" class="form-control" name="email">
+								</div>
+								<div class="col-lg-3 form-group">
+									<button type="submit" class="item-btn">SUBSCRIBE</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>

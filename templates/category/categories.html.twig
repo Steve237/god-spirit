@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Categories
+{% endblock %}
+
+{% block body %}
+	<section class="inner-page-banner bg-common">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="breadcrumbs-area">
+						<h1>Categories</h1>
+						<ul>
+							<li>
+								<a href="{{path('app_home')}}">
+                                    Home
+                                </a>
+							</li>
+							<li>
+                                Categories
+                            </li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="blog-wrap-layout24">
+		<div class="container">
+			<div class="row gutters-40" id="no-equal-gallery">
+				{% for category in categories %}
+                    <div class="col-lg-4 col-sm-6 col-12 no-equal-item">
+                        <div class="blog-box-layout1">
+                            <div class="item-img">
+                                <a href="{{path('posts_by_category', {'category' : category.id})}}">
+                                    <img src="{{asset('img/uploads/' ~ category.categoryPicture) | imagine_filter('categoryImage')}}" 
+                                    alt="image_category">
+                                </a>
+                            </div>
+                            <div class="item-content">
+                                <ul class="entry-meta meta-color-dark">
+                                    <li>
+                                        <i class="fas fa-tag"></i>{{category.name}}
+                                    </li>
+                                </ul>
+                                <a href="{{path('posts_by_category', {'category' : category.id})}}" class="item-btn">
+                                    Voir<i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+			</div>
+		</div>
+	</section>
+{% endblock %}
