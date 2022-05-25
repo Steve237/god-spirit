@@ -54,7 +54,6 @@ class AboutCrudController extends AbstractCrudController
             ->setLabel("Titre");
         yield TextEditorField::new('content')
             ->setLabel("contenu")
-            ->setFormType(CKEditorType::class)
             ->hideOnIndex();
         yield DateField::new("createdAt")
             ->setLabel("Création")
