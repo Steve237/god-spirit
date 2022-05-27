@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{video.title}}
+{% endblock %}
+
+{% block body %}
+	<section class="single-blog-wrap-layout2">
+		<div class="container">
+			<div class="single-blog-box-layout2">
+				<div class="blog-banner">
+					<center>
+						    <iframe width="650" height="400" src="{{video.url}}"> </iframe>
+					</center>
+				</div>
+				<div class="single-blog-content" style="margin-top:100px">
+					<div class="blog-entry-content">
+						<ul class="entry-meta meta-color-dark">
+							<li>
+								<i class="fas fa-calendar-alt">
+								</i>{{ video.createdAt | format_datetime('full', 'none', locale='fr') }}
+							</li>
+							<li>
+								<i class="fas fa-user"></i>Par
+								<a href="#">
+									{{video.user.firstname}} {{video.user.lastname}}
+								</a>
+							</li>
+						</ul>
+						<h2 class="item-title">{{video.title}}</h2>
+						<div class="sharethis-inline-share-buttons text-center" 
+						style="margin-bottom:15px"></div>
+						<ul class="response-area">
+							<li>
+								<a href="#">
+									<i class="far fa-eye"></i>
+									Nombre de vues: {{video.view}}
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="blog-details">
+						{{ video.content | raw }}
+                    </div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

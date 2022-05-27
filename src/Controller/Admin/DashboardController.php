@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Post;
 use App\Entity\About;
+use App\Entity\Videos;
 use App\Entity\Categories;
 use App\Controller\Admin\PostCrudController;
 use Symfony\Component\HttpFoundation\Response;
@@ -27,12 +28,9 @@ class DashboardController extends AbstractDashboardController
     public function index(): Response
     {
         $adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);
-
-        // Option 1. Make your dashboard redirect to the same page for all users
         return $this->redirect($adminUrlGenerator->setController(PostCrudController::class)->generateUrl());
     }
     
-
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
@@ -44,6 +42,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Articles', 'fas fa-list', Post::class);
         yield MenuItem::linkToCrud('Categories', 'fas fa-list', Categories::class);
+        yield MenuItem::linkToCrud('Videos', 'fas fa-list', Videos::class);
         yield MenuItem::linkToCrud('A propos', 'fas fa-list', About::class);
     }
 }

@@ -49,13 +49,11 @@ class AboutCrudController extends AbstractCrudController
     }
 
     public function configureFields(string $pageName): iterable
-    {
-
+    {   
         yield TextField::new('title')
             ->setLabel("Titre");
         yield TextEditorField::new('content')
             ->setLabel("contenu")
-            ->setFormType(CKEditorType::class)
             ->hideOnIndex();
         yield DateField::new("createdAt")
             ->setLabel("Création")
@@ -63,6 +61,9 @@ class AboutCrudController extends AbstractCrudController
         yield DateField::new("updatedAt")
             ->setLabel("Modification")
             ->hideOnForm();
+        
+        if (Crud::PAGE_NEW === $pageName) {
+        
         yield ImageField::new('picture')
             ->setLabel("Image de couverture")
             ->hideOnIndex()
@@ -70,5 +71,17 @@ class AboutCrudController extends AbstractCrudController
             ->setUploadDir('public/img/uploads')
             ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]')
             ->addCssClass('bottom-space');
+
+        } else {
+
+            yield ImageField::new('picture')
+            ->setLabel("Image de couverture")
+            ->hideOnIndex()
+            ->setBasePath('img/uploads')
+            ->setUploadDir('public/img/uploads')
+            ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]')
+            ->addCssClass('bottom-space')
+            ->setRequired(false);
+        }
     }
 }
