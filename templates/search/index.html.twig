@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section class="blog-wrap-layout18">
+        <div class="container-fluid">
+            <h2 class="text-center">Résultat de la recherche</h2>
+            {% if posts is not empty %}
+                <div class="row gutters-40" id="no-equal-gallery">
+                    {% for post in posts %}
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-12 no-equal-item">
+                            <div class="blog-box-layout15">
+                                <div class="item-img">
+                                    <a href="{{path('show_post', {'slug' : post.slug})}}">
+                                        <img src="{{asset('img/uploads/' ~ post.coverPicture) | imagine_filter('coverImage')}}" alt="post-image">
+                                    </a>
+                                </div>
+                                <div class="item-content">
+                                    <ul class="entry-meta meta-color-dark">
+                                        <li>
+                                            <i class="fas fa-tag"></i>
+                                            {{post.category.name}}
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-calendar-alt"></i>
+                                            {{ post.createdAt | format_datetime('full', 'none', locale='fr') }}
+                                        </li>
+                                    </ul>
+                                    <h3 class="item-title text-center">
+                                        <a href="{{path('show_post', {'slug' : post.slug})}}">
+                                            {{post.title}}
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% if videos is not empty %}
+                <div class="row gutters-40" id="no-equal-gallery">
+                    {% for video in videos %}
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-12 no-equal-item">
+                            <div class="blog-box-layout15">
+                                <div class="item-img">
+                                    <a href="{{path('show_video', {'slug' : video.slug})}}">
+                                        <img src="{{asset('img/uploads/' ~ video.coverPicture) | imagine_filter('coverImage')}}" alt="video-image">
+                                    </a>
+                                </div>
+                                <div class="item-content">
+                                    <ul class="entry-meta meta-color-dark">
+                                        <li>
+                                            <i class="fas fa-tag"></i>
+                                            {{video.category.name}}
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-calendar-alt"></i>
+                                            {{ video.createdAt | format_datetime('full', 'none', locale='fr') }}
+                                        </li>
+                                    </ul>
+                                    <h3 class="item-title text-center">
+                                        <a href="{{path('show_video', {'slug' : video.slug})}}">
+                                            {{video.title}}
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% if posts is empty and videos is empty %}
+                <h3 class="text-center">
+                    Aucun résultat ne correspond à votre recherche.
+                </h3>
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}

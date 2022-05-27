@@ -9,9 +9,11 @@
 		<div class="container">
 			<div class="single-blog-box-layout2">
 				<div class="blog-banner">
-					<img src="{{asset('img/uploads/' ~ post.coverPicture) | imagine_filter('postImage')}}">
+					<center>
+						<img src="{{asset('img/uploads/' ~ post.coverPicture) | imagine_filter('postImage')}}">
+					</center>
 				</div>
-				<div class="single-blog-content">
+				<div class="single-blog-content" style="margin-top:100px">
 					<div class="blog-entry-content">
 						<ul class="entry-meta meta-color-dark">
 							<li>
@@ -55,12 +57,12 @@
 									<div class="col-sm-4 col-12">
 										<div class="blog-box-layout1 text-left">
 											<div class="item-img">
-												<a href="single-blog.html">
+												<a href="{{path('app_home')}}">
 													<img src="{{asset('img/uploads/' ~ suggestion.coverPicture) | imagine_filter('postImage')}}">
 												</a>
 											</div>
 											<div class="item-content">
-												<ul class="entry-meta meta-color-dark">
+												<ul class="entry-meta meta-color-dark text-center">
 													<li>
 														<i class="fas fa-tag"></i>
 														{{suggestion.category.name}}
@@ -70,8 +72,8 @@
 														{{ suggestion.createdAt | format_datetime('full', 'none', locale='fr') }}
 													</li>
 												</ul>
-												<h5 class="item-title">
-												<a href="single-blog.html">
+												<h5 class="item-title text-center">
+												<a href="{{path('app_home')}}">
 													{{suggestion.title}}
 												</a>
 												</h5>

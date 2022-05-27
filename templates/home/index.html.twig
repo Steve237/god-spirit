@@ -37,7 +37,7 @@
 										</li>
 										<li>
 									</ul>
-									<h2 class="item-title">
+									<h2 class="item-title text-center">
 										<a href="{{path('show_post', {'slug' : post.slug})}}">
 											{{post.title}}
 										</a>
@@ -74,7 +74,7 @@
 										{{ post.createdAt | format_datetime('full', 'none', locale='fr') }}
 									</li>
 								</ul>
-								<h3 class="item-title">
+								<h3 class="item-title text-center">
 									<a href="{{path('show_post', {'slug' : post.slug})}}">
 										{{post.title}}
 									</a>
@@ -85,34 +85,9 @@
 				{% endfor %}
 			</div>
 			<div class="loadmore-btn-layout2">
-				<a href="#" class="item-btn">Voir tout</a>
-			</div>
-		</div>
-	</section>
-
-	<section class="newsletter-wrap-layout1">
-		<div class="container">
-			<div class="row d-flex justify-content-center">
-				<div class="col-lg-7">
-					<div class="newsletter-box-layout1">
-						<h3 class="item-title">
-							Souscrire à notre newsletter.
-						</h3>
-						<div class="item-subtitle">
-							Recevez nos derniers articles et mise à jour par mail.
-						</div>
-						<form class="newsletter-subscribe-form">
-							<div class="row gutters-10 d-flex align-items-center">
-								<div class="col-lg-9 form-group">
-									<input type="email" placeholder="Enter your e-mail" class="form-control" name="email">
-								</div>
-								<div class="col-lg-3 form-group">
-									<button type="submit" class="item-btn">SUBSCRIBE</button>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
+				<a href="{{path('posts')}}" class="item-btn">
+					Voir tout
+				</a>
 			</div>
 		</div>
 	</section>
