@@ -87,7 +87,7 @@
         },
         
         "post-install-cmd": [
-            "@auto-scripts",
+            "@auto-scripts"
         ],
         
         "post-update-cmd": [
