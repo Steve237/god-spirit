@@ -82,12 +82,6 @@ class PostCrudController extends AbstractCrudController
         yield BooleanField::new('showInSlider')
             ->setLabel("Carroussel")
             ->addCssClass('bottom-space');
-        yield DateField::new("createdAt")
-            ->setLabel("Création")
-            ->hideOnForm();
-        yield DateField::new("updatedAt")
-            ->setLabel("Modification")
-            ->hideOnForm();
         yield AssociationField::new("user")
             ->setLabel("Auteur")
             ->hideOnForm();

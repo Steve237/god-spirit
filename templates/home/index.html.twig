@@ -27,7 +27,7 @@
 											<i class="fas fa-tag"></i>{{post.category.name}}</li>
 										<li>
 											<i class="fas fa-calendar-alt"></i>
-											{{ post.createdAt | format_datetime('full', 'none', locale='fr') }}
+											{{ post.createdAt | date('d-m-y') }}
 										</li>
 										<li>
 											<i class="fas fa-user"></i>Par
@@ -71,7 +71,7 @@
 									</li>
 									<li>
 										<i class="fas fa-calendar-alt"></i>
-										{{ post.createdAt | format_datetime('full', 'none', locale='fr') }}
+										{{ post.createdAt | date('d-m-y') }}
 									</li>
 								</ul>
 								<h3 class="item-title text-center">

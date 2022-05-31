@@ -73,12 +73,5 @@ class VideosCrudController extends AbstractCrudController
                 ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]')
                 ->setRequired(false);
         }
-
-        yield DateField::new("createdAt")
-            ->setLabel("Création")
-            ->hideOnForm();
-        yield DateField::new("updatedAt")
-            ->setLabel("Modification")
-            ->hideOnForm();
     }
 }
