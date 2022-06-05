@@ -17,5 +17,4 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cd /home/u537468063/public_html
-            git config pull.rebase false
             git pull git@github.com:Steve237/god-spirit.git main
