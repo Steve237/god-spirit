@@ -16,7 +16,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd /u537468063/public_html
+            cd /home/u537468063/public_html
             git pull
             composer install
             php bin/console doctrine:schema:update --force
