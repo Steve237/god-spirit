@@ -17,4 +17,4 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cd /home/u537468063/public_html
-            git pull
+            git pull origin main
