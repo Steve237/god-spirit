@@ -5,9 +5,9 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '2ae45c136f265d75ea21c35d192c8e41024315cf',
+        'reference' => '29a52053430bb16efc45a61085f3cb0261726cee',
         'name' => '__root__',
-        'dev' => false,
+        'dev' => true,
     ),
     'versions' => array(
         '__root__' => array(
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '2ae45c136f265d75ea21c35d192c8e41024315cf',
+            'reference' => '29a52053430bb16efc45a61085f3cb0261726cee',
             'dev_requirement' => false,
         ),
         'behat/transliterator' => array(
@@ -64,6 +64,15 @@
             'reference' => 'c824e95d4c83b7102d8bc60595445a6f7d540f96',
             'dev_requirement' => false,
         ),
+        'doctrine/data-fixtures' => array(
+            'pretty_version' => '1.5.3',
+            'version' => '1.5.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../doctrine/data-fixtures',
+            'aliases' => array(),
+            'reference' => 'ba37bfb776de763c5bf04a36d074cd5f5a083c42',
+            'dev_requirement' => true,
+        ),
         'doctrine/dbal' => array(
             'pretty_version' => '3.3.6',
             'version' => '3.3.6.0',
@@ -90,6 +99,15 @@
             'aliases' => array(),
             'reference' => '527970d22b8ca6472ebd88d7c42e512550bd874e',
             'dev_requirement' => false,
+        ),
+        'doctrine/doctrine-fixtures-bundle' => array(
+            'pretty_version' => '3.4.2',
+            'version' => '3.4.2.0',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../doctrine/doctrine-fixtures-bundle',
+            'aliases' => array(),
+            'reference' => '601988c5b46dbd20a0f886f967210aba378a6fd5',
+            'dev_requirement' => true,
         ),
         'doctrine/doctrine-migrations-bundle' => array(
             'pretty_version' => '3.2.2',
@@ -509,6 +527,15 @@
             'reference' => '829d5d1bf60b2efeb0887b7436873becc71a45eb',
             'dev_requirement' => false,
         ),
+        'symfony/debug-bundle' => array(
+            'pretty_version' => 'v5.4.3',
+            'version' => '5.4.3.0',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../symfony/debug-bundle',
+            'aliases' => array(),
+            'reference' => '6f508169752ed2c0d0d8a6641c4cca39a8f1dfcb',
+            'dev_requirement' => true,
+        ),
         'symfony/dependency-injection' => array(
             'pretty_version' => 'v5.4.9',
             'version' => '5.4.9.0',
@@ -700,6 +727,15 @@
             'aliases' => array(),
             'reference' => 'c6e7aa958cb2884d68562264f421ffea59cdad41',
             'dev_requirement' => false,
+        ),
+        'symfony/maker-bundle' => array(
+            'pretty_version' => 'v1.43.0',
+            'version' => '1.43.0.0',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../symfony/maker-bundle',
+            'aliases' => array(),
+            'reference' => 'e3f9a1d9e0f4968f68454403e820dffc7db38a59',
+            'dev_requirement' => true,
         ),
         'symfony/messenger' => array(
             'pretty_version' => 'v5.4.8',
@@ -1099,6 +1135,15 @@
             'aliases' => array(),
             'reference' => '8b9b073390359549fec5f5d797f23bbe9e2997a5',
             'dev_requirement' => false,
+        ),
+        'symfony/web-profiler-bundle' => array(
+            'pretty_version' => 'v5.4.8',
+            'version' => '5.4.8.0',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../symfony/web-profiler-bundle',
+            'aliases' => array(),
+            'reference' => '909c6eea7815066a80d0a362ed41abd7924e376a',
+            'dev_requirement' => true,
         ),
         'symfony/webapp-meta' => array(
             'pretty_version' => 'v1.0.0',
