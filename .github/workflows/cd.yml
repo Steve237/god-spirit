@@ -11,7 +11,7 @@ jobs:
     - name: 📂 Sync Files
       uses: SamKirkland/web-deploy@v1
       with:
-        target-server: 185.224.137.66
+        target-server: u395153934@185.224.137.66
 	      remote-user: u395153934
         private-ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
         destination-path: ~/home/u395153934/public_html
