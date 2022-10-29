@@ -1,26 +1,24 @@
-name: CD
+name: Pipeline-CD
 on:
   push:
     branches: [ main ]
-
 jobs:
-  deploy:
+  cd:
     runs-on: ubuntu-latest
     continue-on-error: false
     steps:
       - uses: actions/checkout@v2
-      - name: Setup PHP, extensions and composer with shivammathur/setup-php
-        uses: shivammathur/setup-php@v2
+      
+      - name: Deploy Over SSH
+        uses: appleboy/ssh-action@master
         with:
-          extensions: mbstring, xml, ctype, iconv, intl, pdo, pdo_mysql, dom, filter, gd, iconv, json, mbstring, pdo
-      - name: Cache multiple paths
-        uses: actions/cache@v2
-        with:
-          path: |
-            vendor
-          key: ${{ runner.os }}-${{ hashFiles('composer.lock') }}
-      - name: "Composer install"
-        run: composer install --no-interaction --no-progress
-      - name: LS
-        run: ls 
-        
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd /home/u395153934/public_html
+            git pull
+            composer install
+            symfony console d:m:m -n
+            APP_ENV=prod APP_DEBUG=0 php bin/console cache:clear
