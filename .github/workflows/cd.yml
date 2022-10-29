@@ -1,24 +1,17 @@
-name: Pipeline-CD
-on:
-  push:
-    branches: [ main ]
+on: push
+name: Publish Website
 jobs:
-  cd:
+  web-deploy:
+    name: 🚀 Deploy Website Every Commit
     runs-on: ubuntu-latest
-    continue-on-error: false
     steps:
-      - uses: actions/checkout@v2
-      
-      - name: Deploy Over SSH
-        uses: SamKirkland/FTP-Deploy-Action@4.3.2
-        with:
-          server: news-illuminati.com
-          username: u395153934
-          password: Espirito237!
-          server-dir: /home/u395153934/public_html/
-          script: 
-            cd /home/u395153934/public_html/god-spirit
-            git pull
-            composer install
-            symfony console d:m:m -n
-            APP_ENV=prod APP_DEBUG=0 php bin/console cache:clear
+    - name: 🚚 Get Latest Code
+      uses: actions/checkout@v3
+    
+    - name: 📂 Sync Files
+      uses: SamKirkland/web-deploy@v1
+      with:
+        target-server: ns1.dns-parking.com	
+        remote-user: u395153934
+        private-ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+        destination-path: ~/home/u395153934/public_html
