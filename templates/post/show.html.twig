@@ -10,7 +10,7 @@
 			<div class="single-blog-box-layout2">
 				<div class="blog-banner">
 					<center>
-						<img src="{{asset('img/uploads/' ~ post.coverPicture) | imagine_filter('postImage')}}">
+						<img src="{{post.coverPicture}}">
 					</center>
 				</div>
 				<div class="single-blog-content" style="margin-top:100px">
@@ -23,7 +23,8 @@
 								<i class="fas fa-calendar-alt">
 								</i>{{ post.createdAt | date('d-m-y') }}</li>
 							<li>
-								<i class="fas fa-user"></i>Par
+								<i class="fas fa-user"></i>
+								Par
 								<a href="#">
 									{{post.user.firstname}} {{post.user.lastname}}
 								</a>
@@ -58,7 +59,7 @@
 										<div class="blog-box-layout1 text-left">
 											<div class="item-img">
 												<a href="{{path('app_home')}}">
-													<img src="{{asset('img/uploads/' ~ suggestion.coverPicture) | imagine_filter('postImage')}}">
+													<img src="{{suggestion.coverPicture}}">
 												</a>
 											</div>
 											<div class="item-content">

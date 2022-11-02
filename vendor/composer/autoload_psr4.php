@@ -90,6 +90,7 @@ return array(
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'Psr\\Cache\\' => array($vendorDir . '/psr/cache/src'),
     'ProxyManager\\' => array($vendorDir . '/friendsofphp/proxy-manager-lts/src/ProxyManager'),
+    'Platformsh\\ConfigReader\\' => array($vendorDir . '/platformsh/config-reader/src'),
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
     'PHPStan\\PhpDocParser\\' => array($vendorDir . '/phpstan/phpdoc-parser/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),

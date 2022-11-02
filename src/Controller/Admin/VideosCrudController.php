@@ -7,9 +7,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Field\UrlField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
@@ -57,20 +55,14 @@ class VideosCrudController extends AbstractCrudController
             ->setLabel("Catégories");
 
         if (Crud::PAGE_NEW === $pageName) {
-            yield ImageField::new('coverPicture')
+            yield UrlField::new('coverPicture')
                 ->setLabel("Image de couverture")
-                ->hideOnIndex()
-                ->setBasePath('img/uploads')
-                ->setUploadDir('public/img/uploads')
-                ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]');
+                ->hideOnIndex();
         } else {
 
-            yield ImageField::new('coverPicture')
+            yield UrlField::new('coverPicture')
                 ->setLabel("Image de couverture")
                 ->hideOnIndex()
-                ->setBasePath('img/uploads')
-                ->setUploadDir('public/img/uploads')
-                ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]')
                 ->setRequired(false);
         }
     }

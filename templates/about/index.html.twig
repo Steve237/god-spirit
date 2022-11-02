@@ -27,21 +27,23 @@
 	<section class="about-wrap-layout1">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6">
-					<div class="about-box-layout2">
-						<h2 class="item-title">
-							{{about.0.title}}
-						</h2>
-						<div style="text-align:left">
-                            {{about.0.content | raw }}
-                        </div>
+				{% for item in about %}
+					<div class="col-lg-6">
+						<div class="about-box-layout2">
+							<h2 class="item-title">
+								{{item.title}}
+							</h2>
+							<div style="text-align:left">
+								{{item.content | raw }}
+							</div>
+						</div>
 					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="about-box-layout3">
-						<img src="{{asset('img/uploads/' ~ about.0.picture) | imagine_filter('aboutImage')}}" alt="post-image">
+					<div class="col-lg-6">
+						<div class="about-box-layout3">
+							<img src="{{asset('img/uploads/' ~ item.picture) | imagine_filter('aboutImage')}}" alt="post-image">
+						</div>
 					</div>
-				</div>
+				{% endfor %}
 			</div>
 		</div>
 	</section>
