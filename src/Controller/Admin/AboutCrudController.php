@@ -65,7 +65,7 @@ class AboutCrudController extends AbstractCrudController
         
         if (Crud::PAGE_NEW === $pageName) {
         
-        yield UrlField::new('url')
+        yield UrlField::new('picture')
             ->setLabel("Image de couverture")
             ->hideOnIndex()
             ->addCssClass('bottom-space');

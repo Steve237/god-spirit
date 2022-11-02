@@ -26,18 +26,12 @@ class CategoriesCrudController extends AbstractCrudController
 
             yield UrlField::new('categoryPicture')
                 ->setLabel("Image de couverture")
-                ->hideOnIndex()
-                ->setBasePath('img/uploads')
-                ->setUploadDir('public/img/uploads')
-                ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]');
+                ->hideOnIndex();
         } else {
 
             yield UrlField::new('categoryPicture')
                 ->setLabel("Image de couverture")
                 ->hideOnIndex()
-                ->setBasePath('img/uploads')
-                ->setUploadDir('public/img/uploads')
-                ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]')
                 ->setRequired(false);
         }
     }
