@@ -22,7 +22,6 @@ hooks:
         php bin/console assets:install --symlink --relative public
         php bin/console cache:clear
         php bin/console doctrine:schema:update --force
-        php bin/console doctrine:fixtures:load --no-interaction
 
 # Les services utilisés
 relationships:
