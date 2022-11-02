@@ -13,13 +13,9 @@ variables:
 # Actions à exécuter à la construction et au déploiement
 hooks:
     build: |
-        set -e
-        bin/console assets:install --no-debug
-        bin/console cache:clear
+      set -e
     deploy: |
-        set -e
-        bin/console assets:install --symlink --relative public
-        bin/console cache:clear
+      set -e
 
 # Les services utilisés
 relationships:
