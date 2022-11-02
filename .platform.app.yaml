@@ -13,9 +13,13 @@ variables:
 # Actions à exécuter à la construction et au déploiement
 hooks:
     build: |
-      set -e
+        set -e
+        php bin/console assets:install --no-debug
+        php bin/console cache:clear
     deploy: |
-      set -e
+        set -e
+        php bin/console assets:install --symlink --relative public
+        php bin/console cache:clear
 
 # Les services utilisés
 relationships:
