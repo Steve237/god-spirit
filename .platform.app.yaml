@@ -44,3 +44,7 @@ web:
             # Le contrôleur frontal (qui doit recevoir toutes les requêtes)
             passthru: "/index.php"
 
+dependencies:
+      php:
+          composer/composer: "^2"
+
