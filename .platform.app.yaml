@@ -9,7 +9,7 @@ build:
 variables:
     env:
         # Configuration des variables d'environnement pour Symfony
-        APP_ENV: 'prod'
+        APP_ENV: 'dev'
         APP_DEBUG: 0
 
 # Actions à exécuter à la construction et au déploiement
