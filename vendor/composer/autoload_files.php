@@ -21,4 +21,5 @@ return array(
     '53c7be3308b5aa229d03a4dfcf6ca18d' => $vendorDir . '/symfony/intl/Resources/functions.php',
     '09f6b20656683369174dd6fa83b7e5fb' => $vendorDir . '/symfony/polyfill-uuid/bootstrap.php',
     'a1105708a18b76903365ca1c4aa61b02' => $vendorDir . '/symfony/translation/Resources/functions.php',
+    '6e55b274997d32b3f3fff58f6dd030ae' => $vendorDir . '/platformsh/symfonyflex-bridge/platformsh-flex-env.php',
 );

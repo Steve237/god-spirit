@@ -46,6 +46,3 @@ web:
 dependencies:
     php:
         composer/composer: '^2'
-
-relationships:
-    mysqldatabase: "dbmysql:mysql"
