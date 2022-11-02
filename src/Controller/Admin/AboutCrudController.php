@@ -8,6 +8,7 @@ use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
+use EasyCorp\Bundle\EasyAdminBundle\Field\UrlField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
@@ -64,22 +65,16 @@ class AboutCrudController extends AbstractCrudController
         
         if (Crud::PAGE_NEW === $pageName) {
         
-        yield ImageField::new('picture')
+        yield UrlField::new('url')
             ->setLabel("Image de couverture")
             ->hideOnIndex()
-            ->setBasePath('img/uploads')
-            ->setUploadDir('public/img/uploads')
-            ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]')
             ->addCssClass('bottom-space');
 
         } else {
 
-            yield ImageField::new('picture')
+            yield UrlField::new('picture')
             ->setLabel("Image de couverture")
             ->hideOnIndex()
-            ->setBasePath('img/uploads')
-            ->setUploadDir('public/img/uploads')
-            ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]')
             ->addCssClass('bottom-space')
             ->setRequired(false);
         }

@@ -14,7 +14,7 @@
                             <div class="blog-box-layout15">
                                 <div class="item-img">
                                     <a href="{{path('show_post', {'slug' : post.slug})}}">
-                                        <img src="{{asset('img/uploads/' ~ post.coverPicture)}}" alt="image">
+                                        <img src="{{post.coverPicture)}}" alt="image">
                                     </a>
                                 </div>
                                 <div class="item-content">
