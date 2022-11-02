@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Categories;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
+use EasyCorp\Bundle\EasyAdminBundle\Field\UrlField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
@@ -23,7 +24,7 @@ class CategoriesCrudController extends AbstractCrudController
 
         if (Crud::PAGE_NEW === $pageName) {
 
-            yield ImageField::new('categoryPicture')
+            yield UrlField::new('categoryPicture')
                 ->setLabel("Image de couverture")
                 ->hideOnIndex()
                 ->setBasePath('img/uploads')
@@ -31,7 +32,7 @@ class CategoriesCrudController extends AbstractCrudController
                 ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]');
         } else {
 
-            yield ImageField::new('categoryPicture')
+            yield UrlField::new('categoryPicture')
                 ->setLabel("Image de couverture")
                 ->hideOnIndex()
                 ->setBasePath('img/uploads')

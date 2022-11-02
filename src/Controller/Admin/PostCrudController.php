@@ -61,12 +61,12 @@ class PostCrudController extends AbstractCrudController
             ->setLabel("Catégories");
 
         if (Crud::PAGE_NEW === $pageName) {
-            yield UrlField::new('url')
+            yield UrlField::new('coverPicture')
                 ->setLabel("Image de couverture")
                 ->hideOnIndex();
         } else {
 
-            yield UrlField::new('url')
+            yield UrlField::new('coverPicture')
                 ->setLabel("Image de couverture")
                 ->hideOnIndex()
                 ->setRequired(false);
