@@ -2,7 +2,7 @@
 name: app
 
 # Le type d'application à construire
-type: php:7.2
+type: php:7.4
 build:
     flavor: composer
 
@@ -19,7 +19,6 @@ hooks:
         bin/console assets:install --no-debug
         bin/console cache:clear
     deploy: |
-        set -e
         bin/console assets:install --symlink --relative public
         bin/console cache:clear
 
