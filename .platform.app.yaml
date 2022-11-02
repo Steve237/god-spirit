@@ -33,7 +33,7 @@ disk: 2048
 
 # Les dossiers qui doivent rester accessibles en écriture
 mounts:
-    #"/var/cache": "shared:files/cache"
+    "/var/cache": "shared:files/cache"
     "/var/log": "shared:files/log"
     "/var/sessions": "shared:files/sessions"
     "/public/img/uploads": "shared:files/public/img/uploads"
