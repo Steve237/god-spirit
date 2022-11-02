@@ -9,8 +9,8 @@ build:
 variables:
     env:
         # Configuration des variables d'environnement pour Symfony
-        APP_ENV: 'dev'
-        APP_DEBUG: 1
+        APP_ENV: 'prod'
+        APP_DEBUG: 0
 
 # Actions à exécuter à la construction et au déploiement
 hooks:
@@ -35,6 +35,7 @@ mounts:
     "/var/cache": "shared:files/cache"
     "/var/log": "shared:files/log"
     "/var/sessions": "shared:files/sessions"
+    "/public/img/uploads": "shared:files/public/img/uploads"
 
 # La configuration web
 web:
