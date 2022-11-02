@@ -8,7 +8,7 @@ variables:
     env:
         # Configuration des variables d'environnement pour Symfony
         APP_ENV: 'dev'
-        APP_DEBUG: 0
+        APP_DEBUG: 1
 
 # Actions à exécuter à la construction et au déploiement
 hooks:
