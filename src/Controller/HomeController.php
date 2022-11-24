@@ -16,7 +16,6 @@ class HomeController extends AbstractController
     {
         
         $posts =  $postRepository->findBy(array(), array('createdAt' => 'DESC'));
-        
         return $this->render('home/index.html.twig', [
             "posts" => $posts
         ]);
