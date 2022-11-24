@@ -17,7 +17,7 @@
 				{% for post in posts %}
 					{% if post.showInSlider == true %}
 						<div class="slider-box-layout7">
-							<div class="item-img">
+							<div class="item-img slider-dimension">
 								<a href="{{path('show_post', {'slug' : post.slug})}}">
 									<img src="{{post.coverPicture}}" alt="slider" class="image-slider">
 								</a>
